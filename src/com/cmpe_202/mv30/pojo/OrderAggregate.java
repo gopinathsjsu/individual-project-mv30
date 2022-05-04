@@ -38,10 +38,19 @@ public class OrderAggregate extends Order {
     }
 
     @Override
-    public Integer getTotal() {
+    public Integer getTotalCount() {
+        Integer totCount = 0;
+        for(Order order: orderList) {
+            totCount = totCount + order.getTotalCount();
+        }
+        return totCount;
+    }
+
+    @Override
+    public Integer getTotalAmount() {
         Integer totAmount = 0;
         for(Order order: orderList) {
-            totAmount = totAmount + order.getTotal();
+            totAmount = totAmount + order.getTotalAmount();
         }
         return totAmount;
     }

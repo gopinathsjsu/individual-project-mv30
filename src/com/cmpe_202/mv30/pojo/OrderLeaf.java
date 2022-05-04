@@ -43,7 +43,12 @@ public class OrderLeaf extends Order {
     }
 
     @Override
-    public Integer getTotal() {
+    public Integer getTotalCount() {
+        return this.itemCount;
+    }
+
+    @Override
+    public Integer getTotalAmount() {
         InventoryItemEntry inventoryItemEntry = inventoryTable.findByName(itemName);
         return itemCount*inventoryItemEntry.getCostPerUnit();
     }
@@ -51,7 +56,7 @@ public class OrderLeaf extends Order {
     @Override
     public List<String> getFulfillmentLogs() {
         InventoryItemEntry inventoryItemEntry = inventoryTable.findByName(itemName);
-        String message = String.format("%s,%s,$s,",itemName, itemCount, itemCount*inventoryItemEntry.getCostPerUnit());
+        String message = String.format("%s,%s,%s,",itemName, itemCount, itemCount*inventoryItemEntry.getCostPerUnit());
         return Arrays.asList(message);
     }
 
@@ -59,7 +64,9 @@ public class OrderLeaf extends Order {
     public List<String> getExcessAmountsLogs() {
         List<String> excessAmountLogs = new ArrayList<>();
         InventoryItemEntry inventoryItemEntry = inventoryTable.findByName(itemName);
-        excessAmountLogs.add(String.format(" Required count of %s is %s but inventory has only %s ",itemName, itemCount, inventoryItemEntry.getCount()));
+        if(itemCount>inventoryItemEntry.getCount()) {
+            excessAmountLogs.add(String.format(" Required count of %s is %s but inventory has only %s ",itemName, itemCount, inventoryItemEntry.getCount()));
+        }
         return excessAmountLogs;
     }
 

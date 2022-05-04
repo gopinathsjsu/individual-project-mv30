@@ -2,9 +2,9 @@ package com.cmpe_202.mv30.constants;
 
 public class OutCsvHeadersKeys {
 
-    public static String ITEM_HEADING_KEY = "Item";
+    public static String ITEM_KEY = "Item";
 
-    public static String QUANTITY_HEADING_EKY = "Heading";
+    public static String QUANTITY_EKY = "Quantity";
 
     public static String PRICE_KEY = "Price";
 

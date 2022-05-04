@@ -25,7 +25,7 @@ public class Main {
         inventoryTable.addItem(CategoryType.MISCELLANEOUS, "Pen", 400, 3);
         inventoryTable.addItem(CategoryType.MISCELLANEOUS, "Pencil", 400, 3);
 
-        final String ORDERS_FILE_PATH = "/Users/mayankverma/Semester-2/CMPE-202/individual_project/individual-project-mv30/orders.csv";
+        final String ORDERS_FILE_PATH = "/Users/mayankverma/Semester-2/CMPE-202/individual_project/individual-project-mv30/Input.csv";
 
         FulfillmentService fulfillmentService = new FulfillmentService();
         fulfillmentService.handleOrders(ORDERS_FILE_PATH);

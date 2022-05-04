@@ -14,7 +14,9 @@ public abstract class Order {
 
     public abstract Boolean isValid();
 
-    public abstract Integer getTotal();
+    public abstract Integer getTotalCount();
+
+    public abstract Integer getTotalAmount();
 
     public abstract List<String> getFulfillmentLogs();
 
