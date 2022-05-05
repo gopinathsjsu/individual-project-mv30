@@ -4,10 +4,14 @@ import com.cmpe_202.mv30.constants.CategoryType;
 import com.cmpe_202.mv30.dao.InventoryTable;
 import com.cmpe_202.mv30.service.FulfillmentService;
 
-public class Main {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
-    public static void main(String[] args) throws Exception {
+public class Billing {
 
+    public void loadData() {
         InventoryTable inventoryTable = InventoryTable.getInstance();
         inventoryTable.addItem(CategoryType.ESSENTIALS, "Clothes", 100, 20);
         inventoryTable.addItem(CategoryType.ESSENTIALS, "Soap", 200, 5);
@@ -24,10 +28,23 @@ public class Main {
         inventoryTable.addItem(CategoryType.MISCELLANEOUS, "HomeDecorPiece", 100, 40);
         inventoryTable.addItem(CategoryType.MISCELLANEOUS, "Pen", 400, 3);
         inventoryTable.addItem(CategoryType.MISCELLANEOUS, "Pencil", 400, 3);
+    }
 
-        final String ORDERS_FILE_PATH = "/Users/mayankverma/Semester-2/CMPE-202/individual_project/individual-project-mv30/Input.csv";
+    public String getInputFilePath() throws IOException {
+        System.out.println(" enter the path to input file path ");
+        BufferedReader br = new BufferedReader( new InputStreamReader(System.in));
+        return br.readLine();
+    }
 
+    public void drive() throws Exception{
+        loadData();
+        final String ORDERS_FILE_PATH = getInputFilePath();
         FulfillmentService fulfillmentService = new FulfillmentService();
         fulfillmentService.handleOrders(ORDERS_FILE_PATH);
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        new Billing().drive();
     }
 }
