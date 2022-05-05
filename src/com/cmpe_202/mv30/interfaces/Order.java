@@ -18,8 +18,6 @@ public abstract class Order {
 
     public abstract void addItem( Order order) throws Exception ;
 
-    public abstract Integer getOrderListSize() throws Exception ;
-
     public abstract List<Order> getOrderList() throws Exception;
 
     public abstract Boolean isValid();

@@ -19,11 +19,6 @@ public class OrderAggregate extends Order {
     }
 
     @Override
-    public Integer getOrderListSize() {
-        return orderList.size();
-    }
-
-    @Override
     public List<Order> getOrderList() throws Exception {
         return this.orderList;
     }

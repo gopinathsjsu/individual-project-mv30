@@ -13,7 +13,6 @@ public class OrderItemEntry {
 
     public void setName( String name) {
         this.name = name;
-        this.count = count;
     }
 
     public String getName() {

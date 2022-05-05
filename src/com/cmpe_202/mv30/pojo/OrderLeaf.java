@@ -27,11 +27,6 @@ public class OrderLeaf extends Order {
     }
 
     @Override
-    public Integer getOrderListSize() throws Exception {
-        throw new Exception(" get order list size operation not supported ");
-    }
-
-    @Override
     public List<Order> getOrderList() throws Exception {
         throw new Exception(" get order list operation not supported ");
     }
