@@ -6,6 +6,16 @@ import java.util.List;
 
 public abstract class Order {
 
+    private String cardNumber;
+
+    public void setCardNumber( String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public String getCardNumber() {
+        return this.cardNumber;
+    }
+
     public abstract void addItem( Order order) throws Exception ;
 
     public abstract Integer getOrderListSize() throws Exception ;

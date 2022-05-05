@@ -23,7 +23,7 @@ public class OrderCategoryAggregate extends OrderAggregate{
         int totCount = super.getTotalCount();
         List<String> excessAmountLogs = new ArrayList<>();
         if(totCount>categoryType.getLimitCount()) {
-            excessAmountLogs.add(String.format(" Category %s limited exceeded with total count of %s ",categoryType, totCount));
+            excessAmountLogs.add(String.format(" Category %s limit was %s that was exceeded with total count of %s ",categoryType, categoryType.getLimitCount(), totCount));
         }
         excessAmountLogs.addAll(super.getExcessAmountsLogs());
         return excessAmountLogs;

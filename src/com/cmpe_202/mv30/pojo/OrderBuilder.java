@@ -16,6 +16,10 @@ public class OrderBuilder {
         this.inventoryTable = InventoryTable.getInstance();
     }
 
+    public void withCardNumber( String cardNumber) {
+        order.setCardNumber(cardNumber);
+    }
+
     public void withOrderItem( OrderItemEntry orderItemEntry) throws Exception{
         Order targetOrder = null;
         InventoryItemEntry inventoryItemEntry = inventoryTable.findByName(orderItemEntry.getName());

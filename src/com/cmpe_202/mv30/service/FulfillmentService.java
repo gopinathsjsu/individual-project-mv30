@@ -6,9 +6,8 @@ import com.cmpe_202.mv30.interfaces.Order;
 import com.cmpe_202.mv30.pojo.OrderFileIterator;
 import com.cmpe_202.mv30.pojo.OrderItemEntry;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import static com.cmpe_202.mv30.constants.OutCsvHeadersKeys.ITEM_KEY;
@@ -46,7 +45,10 @@ public class FulfillmentService {
         } else {
             filePath = ERROR_FILE_PATH;
             logs = order.getExcessAmountsLogs();
-            errorLogService.log("Errors", logs);
+            Collections.reverse(logs);
+            logs.add(String.format(" Error for card number : %s ", order.getCardNumber()));
+            Collections.reverse(logs);
+            errorLogService.log("", logs);
         }
     }
 

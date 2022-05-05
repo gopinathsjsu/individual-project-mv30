@@ -1,3 +1,7 @@
-Errors
- Category LUXURY limited exceeded with total count of 6 
- Category MISCELLANEOUS limited exceeded with total count of 10 
+
+ Error for card number : 23423909024234 
+ Category MISCELLANEOUS limit was 6 that was exceeded with total count of 10 
+ Error for card number : 20923492888888 
+ Category ESSENTIALS limit was 3 that was exceeded with total count of 4 
+ Category LUXURY limit was 4 that was exceeded with total count of 6 
+ Category MISCELLANEOUS limit was 6 that was exceeded with total count of 10 

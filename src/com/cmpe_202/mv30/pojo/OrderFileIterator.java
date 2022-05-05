@@ -48,6 +48,7 @@ public class OrderFileIterator extends FileIterator<Order> {
             orderItemEntries.add(new OrderItemEntry(itemName, itemCount));
         }
         OrderBuilder orderBuilder = new OrderBuilder();
+        orderBuilder.withCardNumber(cardNumber);
         for(OrderItemEntry orderItemEntry: orderItemEntries) {
             orderBuilder.withOrderItem(orderItemEntry);
         }
