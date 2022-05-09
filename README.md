@@ -22,3 +22,10 @@ subcategories. To capture that composite design pattern was used. The participat
 classes were Order(abstract class), OrderAggregate for internal nodes & Order Leaf 
 for leaf nodes. 
 ```
+
+#### Builder Pattern
+```
+For creating order hierarchy with individual orders as customisation Builder pattern
+was used. The participating classes are OrderBuilder as the builder class & Order 
+as object being created class.
+```
