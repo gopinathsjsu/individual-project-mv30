@@ -29,3 +29,11 @@ For creating order hierarchy with individual orders as customisation Builder pat
 was used. The participating classes are OrderBuilder as the builder class & Order 
 as object being created class.
 ```
+
+#### Iterator Pattern
+```
+To iterate over orders one by one on reading the input file completely agnostic to the 
+the format in the input file iterator pattern was used. Participating classes are  FileIterator
+abstract class & OrderFileIterator as iterator implementation. As the aggregate in this was a file
+so no special classes was dedicate for it.
+```
