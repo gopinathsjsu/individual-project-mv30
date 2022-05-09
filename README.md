@@ -37,3 +37,14 @@ the format in the input file iterator pattern was used. Participating classes ar
 abstract class & OrderFileIterator as iterator implementation. As the aggregate in this was a file
 so no special classes was dedicate for it.
 ```
+
+<h3>Output</h3>
+
+### Input file
+![Input](./output/input.png)
+
+### Output file
+![Input](./output/output.png)
+
+### Error file
+![Input](./output/error.png)
